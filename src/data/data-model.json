@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "slug": "smartcity-sample-1",
+      "name": "Smartcity Sample 1",
+      "description": "Smartcity Sample 1",
+      "land": "/models/city_scene.glb",
+      "speed": 6,
+      "sky": {
+        "distance": 5000,
+        "sunPosition":{"x":5, "y":1, "z":8},
+        "inclination":0.6,
+        "azimuth":0.25
+      },
+      "init_position": {"x":0,"y":0,"z":0},
+      "spawn_position": {
+        "x":0,
+        "y":1.6,
+        "z":40
+      },
+      "intro_position": {
+        "x":0,
+        "y":20,
+        "z":120
+      },
+      "camera_position": {
+        "y": 1.6,
+        "x": 0
+      },
+      "assets": [
+        {
+          "name": "montain-1",
+          "position": {
+            "x":0,
+            "y":0,
+            "z": 0
+          }
+        }
+      ]
+    }
+  ]
+}
