@@ -15,7 +15,7 @@ export default function WorldCanvas() {
         shadows
         camera={{
           fov: 65,
-          position: [0, 1.60, 53.61], // DEPAN JALAN
+          position: [0, 1.60, 53.61],
         }}
       >
         <Sky
@@ -77,7 +77,10 @@ function GrassGround() {
   roughnessMap.repeat.set(100, 100)
 
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
+    <mesh
+      rotation={[-Math.PI / 2, 0, 0]}
+      position={[0, -2, 0]}
+    >
       <planeGeometry args={[2000, 2000]} />
       <meshStandardMaterial
         map={colorMap}
