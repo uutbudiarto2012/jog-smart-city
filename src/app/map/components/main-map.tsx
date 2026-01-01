@@ -3,11 +3,11 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { dummyTerritories } from "../data/dummy-territories";
-import { fullTerritories } from "../data/full-territories";
 import { TerritoryData } from "../types/maps";
 import { Button } from "@/components/ui/button";
 import { MapPin, User, ArrowLeft, Search, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { fullTerritories } from "../data/full-territories";
 // import { useRouter } from "next/navigation";
 
 // Dynamic import for FullMap to avoid SSR

@@ -45,14 +45,17 @@ export default function FullMap({
     });
   }, []);
 
+  const handleSelectTerritory = (territory: TerritoryData | null) => {
+    console.log("Selected Territory:", territory);
+  };
   return (
     <div
       key={`map-wrapper-${territories.length}-${fullTerritories.length}`}
       className="h-full w-full bg-[#022c22]"
     >
       <MapContainer
-        center={[-7.875, 110.426]}
-        zoom={10}
+        center={[-7.7862, 110.3798]}
+        zoom={15}
         scrollWheelZoom={true}
         className="h-full w-full"
         maxBounds={maxBounds}
@@ -60,8 +63,8 @@ export default function FullMap({
         zoomControl={false}
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          attribution="&copy; Google Maps"
+          url="http://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
         />
 
         <Pane name="territory-images" style={{ zIndex: 500 }} />
@@ -77,6 +80,9 @@ export default function FullMap({
               fillColor: t.color,
               fillOpacity: 0.4,
               weight: 1,
+            }}
+            eventHandlers={{
+              click: () => handleSelectTerritory(t),
             }}
           ></Polygon>
         ))}
