@@ -56,22 +56,6 @@ export const dummyTerritories: TerritoryData[] = [
     ]), // Using the helper to merge!
   },
   {
-    id: "2",
-    name: "Kawasan Industri 409",
-    owner: "User B",
-    address: "DI Yogyakarta",
-    description: "Zona industri 409 (Dimiliki User B)",
-    color: "#EF4444", // Red-500
-    image: "https://lipsum.app/id/24/900x900",
-    link: "/map/sample-restaurant",
-    coordinates: [
-      [-7.92, 110.58],
-      [-7.92, 110.6],
-      [-7.94, 110.6],
-      [-7.94, 110.58],
-    ],
-  },
-  {
     id: "3",
     name: "Kawasan Industri Biru",
     owner: "User C",
@@ -79,6 +63,7 @@ export const dummyTerritories: TerritoryData[] = [
     description: "Zona industri User C (Gabungan 2 block)",
     color: "#3B82F6", // Blue-500
     image: "https://lipsum.app/id/25/900x900",
+    link: "/map/sample-restaurant",
     coordinates: mergeTerritories([
       {
         coordinates: [
@@ -106,6 +91,7 @@ export const dummyTerritories: TerritoryData[] = [
     description: "Gudang Distribusi User D (Gabungan 4 block)",
     color: "#EAB308", // Yellow-500
     image: "https://lipsum.app/id/26/900x900",
+    link: "/map/sample-restaurant",
     coordinates: mergeTerritories([
       {
         coordinates: [
@@ -149,6 +135,7 @@ export const dummyTerritories: TerritoryData[] = [
     description: "Pabrik Produksi User E",
     color: "#A855F7", // Purple-500
     image: "https://lipsum.app/id/27/900x900",
+    link: "/map/sample-smartcity",
     coordinates: [
       [-7.7781, 110.3789],
       [-7.7781, 110.3798],
