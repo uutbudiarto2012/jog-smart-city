@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "title": "Data Center Zone",
+      "description": "Stable, long-term cashflow generated from digital infrastructure and enterprise leasing, designed for low-volatility income.",
+      "image": "/img/zones/data-center-zone.png"
+    },
+    {
+      "title": "Commercial Zone",
+      "description": "Steady lease-based revenue from retail and office operations within the smart city commercial ecosystem.",
+      "image": "/img/zones/commercial-zone.png"
+    },
+    {
+      "title": "Resort & Tourism Zone",
+      "description": "Growth-driven income from hospitality and tourism activities, offering higher upside tied to occupancy and destination demand.",
+      "image": "/img/zones/resort-tourism-zone.png"
+    },
+    {
+      "title": "Healthcare Zone",
+      "description": "Defensive, predictable cashflow supported by essential healthcare services and long-term demand stability.",
+      "image": "/img/zones/healthcare-zone.png"
+    },
+    {
+      "title": "Research Zone",
+      "description": "A dedicated innovation area for research centers, laboratories, and technology development. It enables experimentation, data-driven discovery, and collaboration to drive innovation and growth.",
+      "image": "/img/zones/research-zone.png"
+    },
+    {
+      "title": "Education Zone",
+      "description": "An integrated learning district designed for schools, universities, and digital learning hubs. It supports knowledge exchange, skill development, and future-ready education ecosystems.",
+      "image": "/img/zones/education-zone.png"
+    }
+  ]
+}
