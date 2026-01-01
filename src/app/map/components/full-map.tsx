@@ -11,12 +11,6 @@ import {
   TileLayer
 } from "react-leaflet";
 import { TerritoryData } from "../types/maps";
-
-const NEON_GREEN = "#00ff9c";
-const NEON_GREEN_SOFT = "rgba(0, 255, 156, 0.35)";
-const NEON_GREEN_GLOW = "rgba(0, 255, 156, 0.15)";
-
-
 // Max bounds to keep the user focused on DIY area
 const maxBounds: L.LatLngBoundsExpression = [
   [-8.5, 109.5], // SouthWest
