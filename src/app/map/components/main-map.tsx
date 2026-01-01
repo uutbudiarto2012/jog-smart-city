@@ -7,7 +7,6 @@ import { TerritoryData } from "../types/maps";
 import { fullTerritories } from "../data/full-territories";
 import { useRouter } from "next/navigation";
 
-// Dynamic import for FullMap to avoid SSR
 const FullMap = dynamic(() => import("./full-map"), {
   ssr: false,
   loading: () => (
@@ -35,7 +34,7 @@ export default function MainMap() {
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#022c22] text-white font-sans selection:bg-emerald-500/30">
+    <section className="flex h-screen w-screen overflow-hidden bg-[#022c22] text-white font-sans selection:bg-emerald-500/30">
       {/* Main Map Area */}
       <div className="flex-1 relative h-full">
         <FullMap
@@ -45,6 +44,6 @@ export default function MainMap() {
           selectedTerritory={selectedTerritory}
         />
       </div>
-    </div>
+    </section>
   );
 }

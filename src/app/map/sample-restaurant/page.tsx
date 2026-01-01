@@ -14,7 +14,7 @@ export default function WorldMapDetail() {
       <nav className='fixed top-0 left-0 right-0 z-10'>
         <div className="container mx-auto p-3  flex justify-between items-center">
           <Button asChild>
-            <Link href={'/map'}>
+            <Link href={'/'}>
               <Icon name='carbon:heat-map' /> Map
             </Link>
           </Button>
