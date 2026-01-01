@@ -21,7 +21,7 @@ export default function MainNav() {
   }, [lastScrollY])
   return (
     <nav className={cn(
-      'fixed top-0 left-0 right-0 z-40',
+      'fixed top-0 left-0 right-0 z-50',
       'duration-500 transition-all',
       lastScrollY >= 200 ? 'bg-white/50 dark:bg-black/50 backdrop-blur-lg' : 'bg-transparent  text-white'
     )}>
