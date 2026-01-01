@@ -1,5 +1,5 @@
-import React from 'react'
-import MainMap from './components/main-map'
+import React from "react";
+import MainMap from "./components/main-map";
 
 export default function WorldMap() {
   return (
@@ -7,5 +7,5 @@ export default function WorldMap() {
       {/* GANTI MAP D SINI */}
       <MainMap />
     </div>
-  )
+  );
 }
