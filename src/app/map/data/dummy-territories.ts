@@ -9,7 +9,7 @@ export const dummyTerritories: TerritoryData[] = [
     address: "DI Yogyakarta (Merged Area)",
     description: "Zona industri User A (Gabungan 25 block)",
     color: "#10B981", // Green-500
-    image: "https://lipsum.app/id/24/900x900",
+    image: "https://lipsum.app/id/30/900x900",
     link: "/map/sample-smartcity",
     coordinates: mergeTerritories([
       // --- ROW 1 (Y: -7.92 to -7.94) ---
@@ -90,7 +90,7 @@ export const dummyTerritories: TerritoryData[] = [
     address: "DI Yogyakarta (South Side)",
     description: "Gudang Distribusi User D (Gabungan 4 block)",
     color: "#EAB308", // Yellow-500
-    image: "https://lipsum.app/id/26/900x900",
+    image: "https://lipsum.app/id/31/900x900",
     link: "/map/sample-restaurant",
     coordinates: mergeTerritories([
       {
