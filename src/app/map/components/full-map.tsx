@@ -8,7 +8,8 @@ import {
   MapContainer,
   Pane,
   Polygon,
-  TileLayer
+  TileLayer,
+  Tooltip
 } from "react-leaflet";
 import { TerritoryData } from "../types/maps";
 // Max bounds to keep the user focused on DIY area
@@ -60,7 +61,7 @@ export default function FullMap({
         maxBounds={maxBounds}
         minZoom={9}
         zoomControl={false}
-        style={{ zIndex: 0, opacity:0.9 }}
+        style={{ zIndex: 0, opacity: 0.9 }}
       >
         <TileLayer
           attribution="&copy; Google Maps"
@@ -83,13 +84,14 @@ export default function FullMap({
               fillColor: t.color,
               fillOpacity: 0.6,
               weight: 1.5,
-              lineJoin:"round"
-              
+              lineJoin: "round"
+
             }}
             eventHandlers={{
               click: () => handleSelectTerritory(t),
             }}
-          ></Polygon>
+          >
+          </Polygon>
         ))}
 
         {/* User Territories (Overlay Layer) */}
@@ -105,6 +107,7 @@ export default function FullMap({
                   opacity={1}
                   zIndex={1}
                   pane="territory-images"
+                  className="h-full w-full object-cover object-center"
                 />
               )}
               <Polygon
@@ -115,8 +118,8 @@ export default function FullMap({
                   fillOpacity: t.image
                     ? 0
                     : selectedTerritory?.id === t.id
-                    ? 1
-                    : 0.9,
+                      ? 1
+                      : 0.9,
                   weight: selectedTerritory?.id === t.id ? 2 : 0,
                 }}
                 pane="territory-borders"
@@ -124,12 +127,12 @@ export default function FullMap({
                   click: () => onSelectTerritory(t),
                 }}
               >
-                {/* <Popup className="custom-popup" closeButton={false}>
-                <div className="p-1">
-                  <h3 className="font-bold text-gray-900">{t.name}</h3>
-                  <p className="text-xs text-gray-600">{t.owner}</p>
-                </div>
-              </Popup> */}
+                <Tooltip sticky direction="auto">
+                  <div className="p-1">
+                    <h3 className="font-bold text-gray-900">{t.name}</h3>
+                    <p className="text-xs text-gray-600">{t.owner}</p>
+                  </div>
+                </Tooltip>
               </Polygon>
             </div>
           );
