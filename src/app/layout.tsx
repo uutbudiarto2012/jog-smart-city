@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Web3ModalProvider } from "@/context/web3-modal";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,7 +17,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Java Smart City | Digital Land & Smart City Ecosystem",
-  description: "Java Smartcity bridges real-world assets and digital land into a unified smart city ecosystem, enabling innovation, efficiency, and sustainable growth.",
+  description:
+    "Java Smartcity bridges real-world assets and digital land into a unified smart city ecosystem, enabling innovation, efficiency, and sustainable growth.",
 };
 
 export default function RootLayout({
@@ -34,8 +36,10 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <NextTopLoader color="#00FE01" />
-          {children}
+          <Web3ModalProvider>
+            <NextTopLoader color="#00FE01" />
+            {children}
+          </Web3ModalProvider>
         </ThemeProvider>
       </body>
     </html>

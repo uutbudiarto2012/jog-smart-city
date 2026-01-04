@@ -26,17 +26,17 @@ export default function MainMap() {
 
     // Navigate if territory has a link
     if (territory?.link) {
-      console.log("Navigating to:", territory.link);
+      // console.log("Navigating to:", territory.link);
       router.push(territory.link);
     } else {
-      console.log("Territory clicked (no link):", territory);
+      // console.log("Territory clicked (no link):", territory);
     }
   };
 
   return (
-    <section className="flex h-screen w-screen overflow-hidden bg-[#022c22] text-white font-sans selection:bg-emerald-500/30">
+    <section className="flex h-screen w-full overflow-hidden bg-[#022c22] text-white font-sans selection:bg-emerald-500/30">
       {/* Main Map Area */}
-      <div className="flex-1 relative h-full">
+      <div className="flex-1 relative h-full overflow-hidden">
         <FullMap
           territories={dummyTerritories}
           fullTerritories={fullTerritories}
