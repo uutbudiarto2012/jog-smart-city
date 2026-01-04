@@ -26,10 +26,10 @@ export default function MainMap() {
 
     // Navigate if territory has a link
     if (territory?.link) {
-      console.log("Navigating to:", territory.link);
+      // console.log("Navigating to:", territory.link);
       router.push(territory.link);
     } else {
-      console.log("Territory clicked (no link):", territory);
+      // console.log("Territory clicked (no link):", territory);
     }
   };
 
