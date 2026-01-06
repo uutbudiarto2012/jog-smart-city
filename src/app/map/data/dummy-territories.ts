@@ -1,19 +1,19 @@
-import { TerritoryData } from "../types/maps";
-import { mergeTerritories } from "../utils/territory";
+import { OwnerTerritory } from "../types/maps-types";
+// import { mergeTerritories } from "../utils/territory";
 
-export const dummyTerritories: TerritoryData[] = [
+export const dummyTerritories: OwnerTerritory[] = [
   {
     id: "1",
     name: "Kawasan Industri Besar User A",
     owner: "0xf2E4F86fa185Be718c18a5d43676fF1D04bd7ffB",
     address: "DI Yogyakarta (Merged Area)",
     description: "Zona industri User A (Gabungan 25 block)",
-    color: "#039303", // Green-500
     // image:
     //   "https://i2c.seadn.io/base/0xe26e46742f7a0d53e71dadfb890374e8d28dfb6e/e37116b3927defddb19d6f2214c18d/dee37116b3927defddb19d6f2214c18d.png?w=1000",
-    link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1296],
           [-7.8924, 110.1305],
@@ -22,6 +22,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1305],
           [-7.8924, 110.1314],
@@ -30,6 +31,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1314],
           [-7.8924, 110.1323],
@@ -38,6 +40,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1323],
           [-7.8924, 110.1332],
@@ -46,6 +49,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1332],
           [-7.8924, 110.1341],
@@ -54,6 +58,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1341],
           [-7.8924, 110.135],
@@ -62,6 +67,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1296],
           [-7.8933, 110.1305],
@@ -70,6 +76,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1305],
           [-7.8933, 110.1314],
@@ -78,6 +85,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1314],
           [-7.8933, 110.1323],
@@ -86,6 +94,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1323],
           [-7.8933, 110.1332],
@@ -94,6 +103,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1332],
           [-7.8933, 110.1341],
@@ -102,6 +112,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8933, 110.1341],
           [-7.8933, 110.135],
@@ -110,6 +121,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1296],
           [-7.8942, 110.1305],
@@ -118,6 +130,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1305],
           [-7.8942, 110.1314],
@@ -126,6 +139,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1314],
           [-7.8942, 110.1323],
@@ -134,6 +148,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1323],
           [-7.8942, 110.1332],
@@ -142,6 +157,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1332],
           [-7.8942, 110.1341],
@@ -150,6 +166,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8942, 110.1341],
           [-7.8942, 110.135],
@@ -158,6 +175,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1296],
           [-7.8951, 110.1305],
@@ -166,6 +184,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1305],
           [-7.8951, 110.1314],
@@ -174,6 +193,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1314],
           [-7.8951, 110.1323],
@@ -182,6 +202,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1323],
           [-7.8951, 110.1332],
@@ -190,6 +211,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1332],
           [-7.8951, 110.1341],
@@ -198,6 +220,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8951, 110.1341],
           [-7.8951, 110.135],
@@ -206,6 +229,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1296],
           [-7.896, 110.1305],
@@ -214,6 +238,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1305],
           [-7.896, 110.1314],
@@ -222,6 +247,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1314],
           [-7.896, 110.1323],
@@ -230,6 +256,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1323],
           [-7.896, 110.1332],
@@ -238,6 +265,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1332],
           [-7.896, 110.1341],
@@ -246,6 +274,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.896, 110.1341],
           [-7.896, 110.135],
@@ -254,6 +283,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1296],
           [-7.8969, 110.1305],
@@ -262,6 +292,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1305],
           [-7.8969, 110.1314],
@@ -270,6 +301,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1314],
           [-7.8969, 110.1323],
@@ -278,6 +310,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1323],
           [-7.8969, 110.1332],
@@ -286,6 +319,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1332],
           [-7.8969, 110.1341],
@@ -294,6 +328,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8969, 110.1341],
           [-7.8969, 110.135],
@@ -301,7 +336,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8978, 110.1341],
         ],
       },
-    ]), // Using the helper to merge!
+    ], // Using the helper to merge!
   },
   {
     id: "3",
@@ -309,12 +344,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x3dd877eDD99521cb7ef07B4388600225b95Eea99",
     address: "DI Yogyakarta (East Side)",
     description: "Zona industri User C (Gabungan 2 block)",
-    color: "#039303", // Blue-500
     // image:
     //   "https://i2c.seadn.io/base/0x699727f9e01a822efdcf7333073f0461e5914b4e/62530922b4294b31d60805e1e23a2c/c762530922b4294b31d60805e1e23a2c.jpeg?w=1000",
     link: "/map/sample-restaurant",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9023, 110.1206],
           [-7.9023, 110.1215],
@@ -323,6 +358,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9023, 110.1215],
           [-7.9023, 110.1224],
@@ -331,6 +367,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9023, 110.1224],
           [-7.9023, 110.1233],
@@ -339,6 +376,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9032, 110.1206],
           [-7.9032, 110.1215],
@@ -347,6 +385,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9032, 110.1215],
           [-7.9032, 110.1224],
@@ -355,6 +394,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9032, 110.1224],
           [-7.9032, 110.1233],
@@ -363,6 +403,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9041, 110.1206],
           [-7.9041, 110.1215],
@@ -371,6 +412,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9041, 110.1215],
           [-7.9041, 110.1224],
@@ -379,6 +421,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.9041, 110.1224],
           [-7.9041, 110.1233],
@@ -386,7 +429,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.905, 110.1224],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "4",
@@ -394,12 +437,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0xaB63F467c81BE61644deDFCf03AFA25F7e0d895c",
     address: "DI Yogyakarta (South Side)",
     description: "Gudang Distribusi User D (Gabungan 4 block)",
-    color: "#039303", // Yellow-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/06824d61eb867108cfac58d3b52287/b206824d61eb867108cfac58d3b52287.png?w=1000",
     link: "/map/sample-restaurant",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.8645, 110.0864],
           [-7.8645, 110.0873],
@@ -408,6 +451,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.8645, 110.0873],
           [-7.8645, 110.0882],
@@ -416,6 +460,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.8654, 110.0864],
           [-7.8654, 110.0873],
@@ -424,6 +469,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-restaurant",
         coordinates: [
           [-7.8654, 110.0873],
           [-7.8654, 110.0882],
@@ -431,7 +477,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8663, 110.0873],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "5",
@@ -439,12 +485,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0xa33b04F09B621A2E4b46A3aDFA22296Eb6e1F538",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab/27e3c4ee0e4671472e7ec383ca9e14/f427e3c4ee0e4671472e7ec383ca9e14.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9203, 110.1116],
           [-7.9203, 110.1125],
@@ -453,6 +499,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9203, 110.1125],
           [-7.9203, 110.1134],
@@ -461,6 +508,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9203, 110.1134],
           [-7.9203, 110.1143],
@@ -469,6 +517,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9203, 110.1143],
           [-7.9203, 110.1152],
@@ -477,6 +526,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9203, 110.1152],
           [-7.9203, 110.1161],
@@ -485,6 +535,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9212, 110.1107],
           [-7.9212, 110.1116],
@@ -493,6 +544,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9212, 110.1116],
           [-7.9212, 110.1125],
@@ -501,6 +553,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9212, 110.1125],
           [-7.9212, 110.1134],
@@ -509,6 +562,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9212, 110.1134],
           [-7.9212, 110.1143],
@@ -517,6 +571,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9212, 110.1143],
           [-7.9212, 110.1152],
@@ -525,6 +580,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9221, 110.1107],
           [-7.9221, 110.1116],
@@ -533,6 +589,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9221, 110.1116],
           [-7.9221, 110.1125],
@@ -541,6 +598,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9221, 110.1125],
           [-7.9221, 110.1134],
@@ -549,6 +607,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9221, 110.1134],
           [-7.9221, 110.1143],
@@ -557,6 +616,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9221, 110.1143],
           [-7.9221, 110.1152],
@@ -564,7 +624,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.923, 110.1143],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "6",
@@ -572,12 +632,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x707d92F85e8Eb4CF78A5ade5dEa9114a08Dc9555",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab/27e3c4ee0e4671472e7ec383ca9e14/f427e3c4ee0e4671472e7ec383ca9e14.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.914, 110.1287],
           [-7.914, 110.1296],
@@ -585,7 +645,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.9149, 110.1287],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "7",
@@ -593,12 +653,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x2BDF63EabacDF90eC38695Bf9cbdF67845984725",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0x524cab2ec69124574082676e6f654a18df49a048/13a72495527dc5b65d1a47ff6a1f13/5813a72495527dc5b65d1a47ff6a1f13.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.0702],
           [-7.8888, 110.0711],
@@ -606,7 +666,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8897, 110.0702],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "8",
@@ -614,12 +674,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x2BDF63EabacDF90eC38695Bf9cbdF67845984725",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0x524cab2ec69124574082676e6f654a18df49a048/13a72495527dc5b65d1a47ff6a1f13/5813a72495527dc5b65d1a47ff6a1f13.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.0711],
           [-7.8897, 110.072],
@@ -627,7 +687,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8906, 110.0711],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "9",
@@ -635,12 +695,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x2BDF63EabacDF90eC38695Bf9cbdF67845984725",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0x524cab2ec69124574082676e6f654a18df49a048/13a72495527dc5b65d1a47ff6a1f13/5813a72495527dc5b65d1a47ff6a1f13.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.072],
           [-7.8906, 110.0729],
@@ -648,7 +708,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8915, 110.072],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "10",
@@ -656,12 +716,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x191d8eB5cA2062AB958829031eC12Bcbce710bec",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0x524cab2ec69124574082676e6f654a18df49a048/13a72495527dc5b65d1a47ff6a1f13/5813a72495527dc5b65d1a47ff6a1f13.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.0999],
           [-7.9041, 110.1008],
@@ -670,6 +730,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1008],
           [-7.9041, 110.1017],
@@ -678,6 +739,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1017],
           [-7.9041, 110.1026],
@@ -686,6 +748,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1026],
           [-7.9041, 110.1035],
@@ -694,6 +757,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1035],
           [-7.9041, 110.1044],
@@ -702,6 +766,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1044],
           [-7.9041, 110.1053],
@@ -710,6 +775,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1053],
           [-7.9041, 110.1062],
@@ -718,6 +784,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1062],
           [-7.9041, 110.1071],
@@ -726,6 +793,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1071],
           [-7.9041, 110.108],
@@ -734,6 +802,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.108],
           [-7.9041, 110.1089],
@@ -742,6 +811,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1089],
           [-7.9041, 110.1098],
@@ -750,6 +820,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1098],
           [-7.9041, 110.1107],
@@ -758,6 +829,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1107],
           [-7.9041, 110.1116],
@@ -766,6 +838,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9041, 110.1116],
           [-7.9041, 110.1125],
@@ -773,7 +846,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.905, 110.1116],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "11",
@@ -781,12 +854,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0x191d8eB5cA2062AB958829031eC12Bcbce710bec",
     address: "DI Yogyakarta (Small Factory)",
     description: "Pabrik Produksi User E",
-    color: "#039303", // Purple-500
     // image:
     //   "https://i2c.seadn.io/ethereum/0x524cab2ec69124574082676e6f654a18df49a048/13a72495527dc5b65d1a47ff6a1f13/5813a72495527dc5b65d1a47ff6a1f13.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1107],
           [-7.8879, 110.1116],
@@ -795,6 +868,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1116],
           [-7.8879, 110.1125],
@@ -803,6 +877,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1125],
           [-7.8879, 110.1134],
@@ -811,6 +886,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1134],
           [-7.8879, 110.1143],
@@ -819,6 +895,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1143],
           [-7.8879, 110.1152],
@@ -827,6 +904,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1152],
           [-7.8879, 110.1161],
@@ -835,6 +913,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.1161],
           [-7.8879, 110.117],
@@ -843,6 +922,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8879, 110.117],
           [-7.8879, 110.1179],
@@ -851,6 +931,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1107],
           [-7.8888, 110.1116],
@@ -859,6 +940,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1116],
           [-7.8888, 110.1125],
@@ -867,6 +949,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1125],
           [-7.8888, 110.1134],
@@ -875,6 +958,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1134],
           [-7.8888, 110.1143],
@@ -883,6 +967,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1143],
           [-7.8888, 110.1152],
@@ -891,6 +976,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1152],
           [-7.8888, 110.1161],
@@ -899,6 +985,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.1161],
           [-7.8888, 110.117],
@@ -907,6 +994,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8888, 110.117],
           [-7.8888, 110.1179],
@@ -915,6 +1003,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1107],
           [-7.8897, 110.1116],
@@ -923,6 +1012,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1116],
           [-7.8897, 110.1125],
@@ -931,6 +1021,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1125],
           [-7.8897, 110.1134],
@@ -939,6 +1030,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1134],
           [-7.8897, 110.1143],
@@ -947,6 +1039,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1143],
           [-7.8897, 110.1152],
@@ -955,6 +1048,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1152],
           [-7.8897, 110.1161],
@@ -963,6 +1057,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.1161],
           [-7.8897, 110.117],
@@ -971,6 +1066,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8897, 110.117],
           [-7.8897, 110.1179],
@@ -979,6 +1075,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1107],
           [-7.8906, 110.1116],
@@ -987,6 +1084,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1116],
           [-7.8906, 110.1125],
@@ -995,6 +1093,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1125],
           [-7.8906, 110.1134],
@@ -1003,6 +1102,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1134],
           [-7.8906, 110.1143],
@@ -1011,6 +1111,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1143],
           [-7.8906, 110.1152],
@@ -1019,6 +1120,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1152],
           [-7.8906, 110.1161],
@@ -1027,6 +1129,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8906, 110.1161],
           [-7.8906, 110.117],
@@ -1035,6 +1138,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1107],
           [-7.8915, 110.1116],
@@ -1043,6 +1147,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1116],
           [-7.8915, 110.1125],
@@ -1051,6 +1156,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1125],
           [-7.8915, 110.1134],
@@ -1059,6 +1165,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1134],
           [-7.8915, 110.1143],
@@ -1067,6 +1174,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1143],
           [-7.8915, 110.1152],
@@ -1075,6 +1183,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1152],
           [-7.8915, 110.1161],
@@ -1083,6 +1192,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.1161],
           [-7.8915, 110.117],
@@ -1091,6 +1201,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8915, 110.117],
           [-7.8915, 110.1179],
@@ -1099,6 +1210,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1116],
           [-7.8924, 110.1125],
@@ -1107,6 +1219,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1125],
           [-7.8924, 110.1134],
@@ -1115,6 +1228,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1134],
           [-7.8924, 110.1143],
@@ -1123,6 +1237,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1143],
           [-7.8924, 110.1152],
@@ -1131,6 +1246,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1152],
           [-7.8924, 110.1161],
@@ -1139,6 +1255,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.8924, 110.1161],
           [-7.8924, 110.117],
@@ -1146,7 +1263,7 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.8933, 110.1161],
         ],
       },
-    ]),
+    ],
   },
   {
     id: "12",
@@ -1154,12 +1271,12 @@ export const dummyTerritories: TerritoryData[] = [
     owner: "0xf2E4F86fa185Be718c18a5d43676fF1D04bd7ffB",
     address: "DI Yogyakarta (Merged Area)",
     description: "Zona industri User A (Gabungan 25 block)",
-    color: "#039303", // Green-500
     // image:
     //   "https://i2c.seadn.io/base/0xe26e46742f7a0d53e71dadfb890374e8d28dfb6e/e37116b3927defddb19d6f2214c18d/dee37116b3927defddb19d6f2214c18d.png?w=1000",
     link: "/map/sample-smartcity",
-    coordinates: mergeTerritories([
+    coordinates: [
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.162],
           [-7.9302, 110.1629],
@@ -1168,6 +1285,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.1629],
           [-7.9302, 110.1638],
@@ -1176,6 +1294,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.1638],
           [-7.9302, 110.1647],
@@ -1184,6 +1303,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.1647],
           [-7.9302, 110.1656],
@@ -1192,6 +1312,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.1656],
           [-7.9302, 110.1665],
@@ -1200,6 +1321,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9302, 110.1665],
           [-7.9302, 110.1674],
@@ -1208,6 +1330,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9311, 110.162],
           [-7.9311, 110.1629],
@@ -1216,6 +1339,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9311, 110.1629],
           [-7.9311, 110.1638],
@@ -1224,6 +1348,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9311, 110.1638],
           [-7.9311, 110.1647],
@@ -1232,6 +1357,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9311, 110.1647],
           [-7.9311, 110.1656],
@@ -1240,6 +1366,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9311, 110.1665],
           [-7.9311, 110.1674],
@@ -1248,6 +1375,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.162],
           [-7.932, 110.1629],
@@ -1256,6 +1384,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.1629],
           [-7.932, 110.1638],
@@ -1264,6 +1393,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.1638],
           [-7.932, 110.1647],
@@ -1272,6 +1402,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.1647],
           [-7.932, 110.1656],
@@ -1280,6 +1411,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.1656],
           [-7.932, 110.1665],
@@ -1288,6 +1420,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.932, 110.1665],
           [-7.932, 110.1674],
@@ -1296,6 +1429,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.162],
           [-7.9329, 110.1629],
@@ -1304,6 +1438,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.1629],
           [-7.9329, 110.1638],
@@ -1312,6 +1447,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.1638],
           [-7.9329, 110.1647],
@@ -1320,6 +1456,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.1647],
           [-7.9329, 110.1656],
@@ -1328,6 +1465,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.1656],
           [-7.9329, 110.1665],
@@ -1336,6 +1474,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9329, 110.1665],
           [-7.9329, 110.1674],
@@ -1344,6 +1483,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.162],
           [-7.9338, 110.1629],
@@ -1352,6 +1492,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.1629],
           [-7.9338, 110.1638],
@@ -1360,6 +1501,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.1638],
           [-7.9338, 110.1647],
@@ -1368,6 +1510,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.1647],
           [-7.9338, 110.1656],
@@ -1376,6 +1519,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.1656],
           [-7.9338, 110.1665],
@@ -1384,6 +1528,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9338, 110.1665],
           [-7.9338, 110.1674],
@@ -1392,6 +1537,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.162],
           [-7.9347, 110.1629],
@@ -1400,6 +1546,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.1629],
           [-7.9347, 110.1638],
@@ -1408,6 +1555,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.1638],
           [-7.9347, 110.1647],
@@ -1416,6 +1564,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.1647],
           [-7.9347, 110.1656],
@@ -1424,6 +1573,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.1656],
           [-7.9347, 110.1665],
@@ -1432,6 +1582,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9347, 110.1665],
           [-7.9347, 110.1674],
@@ -1440,6 +1591,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1611],
           [-7.9356, 110.162],
@@ -1448,6 +1600,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.162],
           [-7.9356, 110.1629],
@@ -1456,6 +1609,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1629],
           [-7.9356, 110.1638],
@@ -1464,6 +1618,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1638],
           [-7.9356, 110.1647],
@@ -1472,6 +1627,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1647],
           [-7.9356, 110.1656],
@@ -1480,6 +1636,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1656],
           [-7.9356, 110.1665],
@@ -1488,6 +1645,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9356, 110.1665],
           [-7.9356, 110.1674],
@@ -1496,6 +1654,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1602],
           [-7.9365, 110.1611],
@@ -1504,6 +1663,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1611],
           [-7.9365, 110.162],
@@ -1512,6 +1672,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.162],
           [-7.9365, 110.1629],
@@ -1520,6 +1681,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1629],
           [-7.9365, 110.1638],
@@ -1528,6 +1690,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1638],
           [-7.9365, 110.1647],
@@ -1536,6 +1699,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1647],
           [-7.9365, 110.1656],
@@ -1544,6 +1708,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1656],
           [-7.9365, 110.1665],
@@ -1552,6 +1717,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9365, 110.1665],
           [-7.9365, 110.1674],
@@ -1560,6 +1726,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1602],
           [-7.9374, 110.1611],
@@ -1568,6 +1735,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1611],
           [-7.9374, 110.162],
@@ -1576,6 +1744,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.162],
           [-7.9374, 110.1629],
@@ -1584,6 +1753,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1629],
           [-7.9374, 110.1638],
@@ -1592,6 +1762,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1638],
           [-7.9374, 110.1647],
@@ -1600,6 +1771,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1647],
           [-7.9374, 110.1656],
@@ -1608,6 +1780,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1656],
           [-7.9374, 110.1665],
@@ -1616,6 +1789,7 @@ export const dummyTerritories: TerritoryData[] = [
         ],
       },
       {
+        link: "/map/sample-smartcity",
         coordinates: [
           [-7.9374, 110.1665],
           [-7.9374, 110.1674],
@@ -1623,6 +1797,6 @@ export const dummyTerritories: TerritoryData[] = [
           [-7.9383, 110.1665],
         ],
       },
-    ]), // Using the helper to merge!
+    ], // Using the helper to merge!
   },
 ];

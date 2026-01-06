@@ -3,7 +3,7 @@ import HomeHowToEarn from "@/components/home/how-to-earn";
 import InvestmentZones from "@/components/home/investment-zones";
 import WhatIsDigitalLand from "@/components/home/what-is-digital-land";
 import WhyDigitalLand from "@/components/home/why-digital-land";
-import MainMap from "../map/components/main-map";
+import MainMap from "../map/components/MainMap";
 export default function Home() {
   return (
     <>

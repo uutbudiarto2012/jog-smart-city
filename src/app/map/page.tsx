@@ -1,5 +1,5 @@
 import React from "react";
-import MainMap from "./components/main-map";
+import MainMap from "./components/MainMap";
 
 export default function WorldMap() {
   return (
