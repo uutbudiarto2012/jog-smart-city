@@ -10,6 +10,7 @@ interface CheckoutModalProps {
   onConfirm: () => void;
   cart: TerritoryData[];
   isProcessing?: boolean;
+  mode?: "BUY" | "SELL";
 }
 
 export default function CheckoutModal({
@@ -18,10 +19,14 @@ export default function CheckoutModal({
   onConfirm,
   cart,
   isProcessing = false,
+  mode = "BUY",
 }: CheckoutModalProps) {
   if (!isOpen) return null;
 
   const totalAmount = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+  const isBuy = mode === "BUY";
+  const actionText = isBuy ? "Purchase" : "Listing";
+  const payButtonText = isBuy ? "Confirm Payment" : "List for Sale";
 
   return (
     <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
@@ -34,7 +39,7 @@ export default function CheckoutModal({
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-zinc-100 dark:border-white/5 bg-zinc-50/50 dark:bg-black/20">
           <h3 className="text-lg font-bold text-zinc-900 dark:text-white">
-            Confirm Purchase
+            Confirm {actionText}
           </h3>
           <Button
             variant="ghost"
@@ -50,8 +55,8 @@ export default function CheckoutModal({
         {/* Content */}
         <div className="p-6 space-y-4">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            You are about to purchase the following territories. Please review
-            your order details below.
+            You are about to {isBuy ? "purchase" : "list"} the following
+            territories. Please review your details below.
           </p>
 
           <div className="bg-zinc-50 dark:bg-white/5 rounded-xl p-4 space-y-3 border border-zinc-100 dark:border-white/5">
@@ -66,9 +71,15 @@ export default function CheckoutModal({
             <div className="border-t border-zinc-200 dark:border-white/10 my-2"></div>
             <div className="flex justify-between items-center text-lg font-bold">
               <span className="text-zinc-700 dark:text-zinc-300">
-                Total Price
+                Total Value
               </span>
-              <span className="text-emerald-600 dark:text-emerald-400">
+              <span
+                className={`${
+                  isBuy
+                    ? "text-emerald-600 dark:text-emerald-400"
+                    : "text-indigo-600 dark:text-indigo-400"
+                }`}
+              >
                 {totalAmount.toFixed(2)} USD
               </span>
             </div>
@@ -93,7 +104,11 @@ export default function CheckoutModal({
           <Button
             onClick={onConfirm}
             disabled={isProcessing}
-            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-lg shadow-emerald-500/20"
+            className={`flex-1 text-white font-semibold shadow-lg ${
+              isBuy
+                ? "bg-emerald-600 hover:bg-emerald-700 shadow-emerald-500/20"
+                : "bg-indigo-600 hover:bg-indigo-700 shadow-indigo-500/20"
+            }`}
           >
             {isProcessing ? (
               <>
@@ -103,7 +118,7 @@ export default function CheckoutModal({
             ) : (
               <>
                 <Check className="mr-2 h-4 w-4" />
-                Confirm Payment
+                {payButtonText}
               </>
             )}
           </Button>

@@ -10,9 +10,9 @@ export interface OwnerTerritory {
 }
 
 export interface TerritoryData {
-  id?: string;
-  name?: string;
-  description?: string;
+  id: string;
+  name: string;
+  description: string;
   link?: string;
   image?: string;
   price?: number;

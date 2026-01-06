@@ -33,6 +33,7 @@ interface FullMapProps {
   selectedTerritory: TerritoryData | null;
   cart: TerritoryData[];
   onMultiSelect?: (territories: TerritoryData[]) => void;
+  mode?: "BUY" | "SELL";
 }
 
 // Max bounds to keep the user focused on DIY area
@@ -45,9 +46,15 @@ const maxBounds: L.LatLngBoundsExpression = [
 function BoxSelection({
   onSelect,
   fullTerritories,
+  userTerritories,
+  mode = "BUY",
+  userAddress,
 }: {
   onSelect: (territories: TerritoryData[]) => void;
   fullTerritories: TerritoryData[];
+  userTerritories: OwnerTerritory[];
+  mode?: "BUY" | "SELL";
+  userAddress?: string;
 }) {
   const map = useMap();
   const [startPoint, setStartPoint] = useState<L.LatLng | null>(null);
@@ -80,10 +87,26 @@ function BoxSelection({
     mouseup() {
       if (isSelecting && startPoint && endPoint) {
         const bounds = L.latLngBounds(startPoint, endPoint);
-        const selected = fullTerritories.filter((t) => {
-          if (t.status !== "LISTED") return false;
-          // Check if the center (or first point) of the territory is within the selection box
-          // Using first coordinate as approximation for small blocks
+
+        let candidates: TerritoryData[] = [];
+
+        if (mode === "BUY") {
+          candidates = fullTerritories;
+        } else {
+          // For SELL mode, gather all user's blocks
+          // Filter for owned by this user
+          candidates = userTerritories
+            .filter(
+              (ut) => ut.address === userAddress || ut.owner === userAddress
+            ) // Check robust match
+            .flatMap((ut) => ut.coordinates);
+        }
+
+        const selected = candidates.filter((t) => {
+          // Extra status check for BUY
+          if (mode === "BUY" && t.status !== "LISTED") return false;
+
+          // Check intersection
           const lat = t.coordinates[0][0];
           const lng = t.coordinates[0][1];
           return bounds.contains([lat, lng]);
@@ -108,9 +131,9 @@ function BoxSelection({
     <Rectangle
       bounds={L.latLngBounds(startPoint, endPoint)}
       pathOptions={{
-        color: "#3b82f6",
+        color: mode === "BUY" ? "#3b82f6" : "#8b5cf6", // Blue for Buy, Purple for Sell
         weight: 1,
-        fillColor: "#3b82f6",
+        fillColor: mode === "BUY" ? "#3b82f6" : "#8b5cf6",
         fillOpacity: 0.2,
         dashArray: "5, 5",
       }}
@@ -125,6 +148,7 @@ export default function FullMap({
   selectedTerritory,
   cart,
   onMultiSelect,
+  mode = "BUY",
 }: FullMapProps) {
   const { resolvedTheme } = useTheme();
   const { address } = useAccount();
@@ -151,13 +175,13 @@ export default function FullMap({
       ter.coordinates.forEach((subBlock) => {
         // Use JSON.stringify for coordinate comparison
         // Assuming coordinates are consistent (order and precision)
-        occupiedCoords.add(JSON.stringify(subBlock.coordinates));
+        occupiedCoords.add(subBlock.id);
       });
     });
 
     // Filter fullTerritories to exclude those that are already in occupiedCoords
     return fullTerritories.filter((t) => {
-      return !occupiedCoords.has(JSON.stringify(t.coordinates));
+      return !occupiedCoords.has(t.id);
     });
   }, [territories, fullTerritories]);
 
@@ -191,6 +215,9 @@ export default function FullMap({
           <BoxSelection
             onSelect={onMultiSelect}
             fullTerritories={fullTerritories}
+            userTerritories={territories}
+            mode={mode}
+            userAddress={address}
           />
         )}
 
@@ -230,6 +257,7 @@ export default function FullMap({
               }}
               eventHandlers={{
                 click: () => {
+                  if (mode === "SELL") return;
                   if (t.status === "LISTED") {
                     onSelectTerritory(t);
                   }
@@ -243,6 +271,27 @@ export default function FullMap({
         {territories.map((ter) => {
           // const bounds = L.latLngBounds(t.coordinates);
           return ter.coordinates.map((t) => {
+            const isSelected = selectedTerritory?.id === t.id;
+            const isInCart = cart.some((c) => c.id === t.id);
+            const isOwner = address === ter.owner;
+
+            let fillColor = isOwner ? COLOR_OWNER : COLOR_NOT_AVAILAIBLE;
+            let strokeColor = isOwner ? COLOR_OWNER : COLOR_NOT_AVAILAIBLE;
+
+            if (isInCart) {
+              fillColor = COLOR_IN_CART;
+              strokeColor = COLOR_IN_CART;
+            }
+
+            if (isSelected) {
+              strokeColor = COLOR_SELECTED;
+            }
+
+            const hasImage = !!ter.image || !!t.image;
+            if (hasImage) {
+              fillColor = "transparent";
+            }
+
             return (
               <div key={t.id}>
                 {/* {t.image && (
@@ -261,21 +310,22 @@ export default function FullMap({
                 <Polygon
                   positions={t.coordinates}
                   pathOptions={{
-                    color:
-                      address === ter.owner
-                        ? COLOR_OWNER
-                        : COLOR_NOT_AVAILAIBLE,
-                    fillColor: ter.image
-                      ? "transparent"
-                      : address === ter.owner
-                      ? COLOR_OWNER
-                      : COLOR_NOT_AVAILAIBLE,
-                    fillOpacity: t.image ? 0 : 0.6,
-                    weight: selectedTerritory?.id === t.id ? 1 : 1,
+                    color: strokeColor,
+                    fillColor: fillColor,
+                    fillOpacity: hasImage
+                      ? 0
+                      : isSelected || isInCart
+                      ? 0.8
+                      : 0.6,
+                    weight: isSelected ? 3 : 1,
+                    lineJoin: "round",
                   }}
                   pane="territory-borders"
                   eventHandlers={{
-                    click: () => onSelectTerritory(t),
+                    click: () => {
+                      if (mode === "SELL" && !isOwner) return;
+                      onSelectTerritory(t);
+                    },
                   }}
                 ></Polygon>
               </div>

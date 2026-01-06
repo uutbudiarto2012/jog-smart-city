@@ -11,6 +11,7 @@ interface MapSidebarProps {
   cart: TerritoryData[];
   onAddToCart: (item: TerritoryData) => void;
   onRemoveFromCart: (id: string) => void;
+  mode?: "BUY" | "SELL";
   className?: string;
 }
 
@@ -20,12 +21,22 @@ export default function MapSidebar({
   cart,
   onAddToCart,
   onRemoveFromCart,
+  mode = "BUY",
   className,
 }: MapSidebarProps) {
   const isListed = selectedTerritory?.status === "LISTED";
   const isInCart = selectedTerritory
     ? cart.some((item) => item.id === selectedTerritory.id)
     : false;
+
+  const isBuy = mode === "BUY";
+
+  // In BUY mode, we can only add if it's LISTED.
+  // In SELL mode, we can add if it's NOT LISTED (assuming it's owned by us, which MainMap filters).
+  // Actually, MainMap ensures we only select valid items for the mode.
+  // So we can assume if something is selected in SELL mode, it is valid to "Sell" (i.e. Add to Sell List).
+
+  const canAction = isBuy ? isListed : true;
 
   if (!selectedTerritory) {
     return null;
@@ -120,13 +131,15 @@ export default function MapSidebar({
             </div>
           </div>
 
-          {isListed ? (
+          {canAction ? (
             <Button
               className={cn(
                 "w-full font-semibold transition-all duration-300",
                 isInCart
                   ? "bg-red-500/10 dark:bg-red-500/20 text-red-600 dark:text-red-400 hover:bg-red-500/20 dark:hover:bg-red-500/30 border border-red-200 dark:border-red-500/50"
-                  : "bg-emerald-500 text-white dark:text-black hover:bg-emerald-600 dark:hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  : isBuy
+                  ? "bg-emerald-500 text-white dark:text-black hover:bg-emerald-600 dark:hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  : "bg-indigo-500 text-white dark:text-black hover:bg-indigo-600 dark:hover:bg-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]"
               )}
               disabled={isInCart}
               onClick={() =>
@@ -137,11 +150,13 @@ export default function MapSidebar({
             >
               {isInCart ? (
                 <>
-                  <ShoppingCart className="mr-2 h-4 w-4" /> Added to Cart
+                  <ShoppingCart className="mr-2 h-4 w-4" />{" "}
+                  {isBuy ? "Added to Cart" : "Added to List"}
                 </>
               ) : (
                 <>
-                  <Plus className="mr-2 h-4 w-4" /> Add to Cart
+                  <Plus className="mr-2 h-4 w-4" />{" "}
+                  {isBuy ? "Add to Cart" : "Sell This Block"}
                 </>
               )}
             </Button>

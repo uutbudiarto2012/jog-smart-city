@@ -12,6 +12,7 @@ interface CartSidebarProps {
   onRemoveFromCart: (id: string) => void;
   onBuy: () => void;
   onClearCart: () => void;
+  mode?: "BUY" | "SELL";
   className?: string;
 }
 
@@ -22,12 +23,25 @@ export default function CartSidebar({
   onRemoveFromCart,
   onBuy,
   onClearCart,
+  mode = "BUY",
   className,
 }: CartSidebarProps) {
   const totalCartPrice = cart.reduce(
     (total, item) => total + (item.price || 0),
     0
   );
+
+  const isBuy = mode === "BUY";
+  const primaryColorClass = isBuy
+    ? "text-emerald-600 dark:text-emerald-400"
+    : "text-indigo-600 dark:text-indigo-400";
+  const bgSoftClass = isBuy
+    ? "bg-emerald-50/50 dark:bg-emerald-900/10"
+    : "bg-indigo-50/50 dark:bg-indigo-900/10";
+  const borderClass = isBuy ? "border-emerald-500/20" : "border-indigo-500/20";
+  const buttonClass = isBuy
+    ? "bg-emerald-500 hover:bg-emerald-600 dark:hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+    : "bg-indigo-500 hover:bg-indigo-600 dark:hover:bg-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]";
 
   return (
     <div
@@ -38,11 +52,17 @@ export default function CartSidebar({
       )}
     >
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-emerald-500/20 bg-emerald-50/50 dark:bg-emerald-900/10">
+      <div
+        className={`flex items-center justify-between p-4 border-b ${borderClass} ${bgSoftClass}`}
+      >
         <h2 className="text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-          <ShoppingCart className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-          Your Cart
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-white dark:text-black">
+          <ShoppingCart className={`h-4 w-4 ${primaryColorClass}`} />
+          {isBuy ? "Your Cart" : "Sell List"}
+          <span
+            className={`flex h-5 w-5 items-center justify-center rounded-full ${
+              isBuy ? "bg-emerald-500" : "bg-indigo-500"
+            } text-[10px] text-white`}
+          >
             {cart.length}
           </span>
         </h2>
@@ -75,10 +95,12 @@ export default function CartSidebar({
             <div className="text-center py-10 opacity-50">
               <ShoppingCart className="h-12 w-12 mx-auto mb-3 text-zinc-400 dark:text-gray-500" />
               <p className="text-sm text-zinc-600 dark:text-gray-300">
-                Your cart is empty.
+                {isBuy ? "Your cart is empty." : "No blocks selected for sale."}
               </p>
               <p className="text-xs text-zinc-400 dark:text-gray-500 mt-1">
-                Select LISTED blocks to add them here.
+                {isBuy
+                  ? "Select LISTED blocks to add them here."
+                  : "Select your OWNED blocks to list them."}
               </p>
             </div>
           ) : (
@@ -105,8 +127,8 @@ export default function CartSidebar({
                     <span className="text-zinc-500 dark:text-gray-400 font-mono text-[10px]">
                       {item.id}
                     </span>
-                    <span className="text-emerald-600 dark:text-emerald-400 font-mono">
-                      {item.price} USD
+                    <span className={`${primaryColorClass} font-mono`}>
+                      {item.price ? `${item.price} USD` : "Not Listed"}
                     </span>
                   </div>
                 </div>
@@ -118,20 +140,27 @@ export default function CartSidebar({
 
       {/* Footer / Checkout */}
       {cart.length > 0 && (
-        <div className="p-4 border-t border-emerald-500/20 bg-white/50 dark:bg-black/40 backdrop-blur-sm">
+        <div
+          className={`p-4 border-t ${borderClass} bg-white/50 dark:bg-black/40 backdrop-blur-sm`}
+        >
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm text-zinc-500 dark:text-gray-400">
-              Total
+              Total Value
             </span>
-            <span className="text-xl font-mono font-bold text-emerald-600 dark:text-emerald-400">
+            <span
+              className={`text-xl font-mono font-bold ${primaryColorClass}`}
+            >
               {totalCartPrice.toFixed(2)} USD
             </span>
           </div>
           <Button
-            className="w-full bg-emerald-500 text-white dark:text-black font-bold hover:bg-emerald-600 dark:hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all"
+            className={`w-full text-white dark:text-white font-bold transition-all ${buttonClass}`}
             onClick={onBuy}
           >
-            <CreditCard className="mr-2 h-4 w-4" /> Checkout ({cart.length})
+            <CreditCard className="mr-2 h-4 w-4" />
+            {isBuy
+              ? `Checkout (${cart.length})`
+              : `List Items (${cart.length})`}
           </Button>
         </div>
       )}
