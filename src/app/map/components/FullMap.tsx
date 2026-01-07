@@ -193,7 +193,7 @@ export default function FullMap({
       <MapContainer
         center={[-7.9158, 110.1224]}
         zoom={13}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         className="h-full w-full"
         maxBounds={maxBounds}
         minZoom={9}
@@ -214,7 +214,7 @@ export default function FullMap({
         {onMultiSelect && (
           <BoxSelection
             onSelect={onMultiSelect}
-            fullTerritories={fullTerritories}
+            fullTerritories={filteredFullTerritories}
             userTerritories={territories}
             mode={mode}
             userAddress={address}

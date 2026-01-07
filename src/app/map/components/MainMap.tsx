@@ -1,11 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { dummyTerritories } from "../data/dummy-territories";
-import { TerritoryData } from "../types/maps-types";
+import { OwnerTerritory, TerritoryData } from "../types/maps-types";
 import { fullTerritories } from "../data/full-territories";
 // import { useRouter } from "next/navigation";
+import { useAccount } from "wagmi";
 
 import MapSidebar from "./MapSidebar";
 import CartSidebar from "./CartSidebar";
@@ -24,8 +25,70 @@ const FullMap = dynamic(() => import("./FullMap"), {
   ),
 });
 
+const OWNED_TERRITORIES_KEY = "map_owned_territories";
+const AVAILABLE_TERRITORIES_KEY = "map_available_territories";
+
 export default function MainMap() {
+  const { address } = useAccount();
   // const router = useRouter();
+
+  // Initialize owned territories with the dummy data
+  const [ownedTerritories, setOwnedTerritories] =
+    useState<OwnerTerritory[]>(dummyTerritories);
+  // Initialize available territories (market) with full data
+  const [availableTerritories, setAvailableTerritories] =
+    useState<TerritoryData[]>(fullTerritories);
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Load from local storage on mount
+  useEffect(() => {
+    const savedOwned = localStorage.getItem(OWNED_TERRITORIES_KEY);
+    const savedAvailable = localStorage.getItem(AVAILABLE_TERRITORIES_KEY);
+
+    if (savedOwned) {
+      try {
+        setOwnedTerritories(JSON.parse(savedOwned));
+      } catch (e) {
+        console.error(
+          "Failed to parse owned territories from local storage",
+          e
+        );
+      }
+    }
+
+    if (savedAvailable) {
+      try {
+        setAvailableTerritories(JSON.parse(savedAvailable));
+      } catch (e) {
+        console.error(
+          "Failed to parse available territories from local storage",
+          e
+        );
+      }
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save to local storage on change
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem(
+        OWNED_TERRITORIES_KEY,
+        JSON.stringify(ownedTerritories)
+      );
+    }
+  }, [ownedTerritories, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem(
+        AVAILABLE_TERRITORIES_KEY,
+        JSON.stringify(availableTerritories)
+      );
+    }
+  }, [availableTerritories, isLoaded]);
+
   const [selectedTerritory, setSelectedTerritory] =
     useState<TerritoryData | null>(null);
   const [cart, setCart] = useState<TerritoryData[]>([]);
@@ -65,6 +128,45 @@ export default function MainMap() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
+    if (mode === "BUY") {
+      // Add purchased items to ownedTerritories
+      const newPurchase: OwnerTerritory = {
+        id: `purchase-${Date.now()}`,
+        name: "My New Territory",
+        owner: address || "0xCurrentUser",
+        address: "New Location",
+        description: `Purchased on ${new Date().toLocaleDateString()}`,
+        coordinates: cart.map((item) => ({ ...item, status: "OWNED" })),
+      };
+      setOwnedTerritories((prev) => [...prev, newPurchase]);
+    } else if (mode === "SELL") {
+      // 1. Remove sold items from ownedTerritories
+      setOwnedTerritories((prev) => {
+        return (
+          prev
+            .map((group) => ({
+              ...group,
+              // Filter out items that are in the cart (sold)
+              coordinates: group.coordinates.filter(
+                (t) => !cart.some((c) => c.id === t.id)
+              ),
+            }))
+            // Remove groups that became empty
+            .filter((group) => group.coordinates.length > 0)
+        );
+      });
+
+      // 2. Make sure sold items appear as LISTED in the market
+      setAvailableTerritories((prev) =>
+        prev.map((t) => {
+          if (cart.some((c) => c.id === t.id)) {
+            return { ...t, status: "LISTED" };
+          }
+          return t;
+        })
+      );
+    }
+
     setSuccessCount(cart.length);
     setCart([]);
     setIsCheckoutOpen(false);
@@ -84,10 +186,8 @@ export default function MainMap() {
     if (mode === "BUY" && territory.status === "LISTED") {
       setSelectedTerritory(territory);
     }
-    // In SELL mode, only show owned (we'll assume the passed territory is valid from FullMap logic,
-    // but for safety we can check owner if available in future)
+    // In SELL mode, only show owned
     else if (mode === "SELL") {
-      // Ideally we check if it belongs to user, but FullMap will filter clicks
       setSelectedTerritory(territory);
     }
   };
@@ -138,8 +238,8 @@ export default function MainMap() {
       {/* Main Map Area */}
       <div className="flex-1 relative h-full overflow-hidden">
         <FullMap
-          territories={dummyTerritories}
-          fullTerritories={fullTerritories}
+          territories={ownedTerritories}
+          fullTerritories={availableTerritories}
           onSelectTerritory={handleTerritoryClick}
           selectedTerritory={selectedTerritory}
           cart={cart}
