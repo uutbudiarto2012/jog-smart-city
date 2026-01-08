@@ -2,12 +2,14 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface SuccessModalProps {
   isOpen: boolean;
   onClose: () => void;
   count: number;
   mode: "BUY" | "SELL";
+  urlScanner: string;
 }
 
 export default function SuccessModal({
@@ -15,6 +17,7 @@ export default function SuccessModal({
   onClose,
   count,
   mode,
+  urlScanner
 }: SuccessModalProps) {
   if (!isOpen) return null;
 
@@ -40,15 +43,19 @@ export default function SuccessModal({
                 ? `You have successfully purchased ${count} blocks.`
                 : `You have successfully listed ${count} blocks for sale.`}
             </p>
-          </div>
-
-          <div className="pt-4 w-full">
-            <Button
-              onClick={onClose}
-              className="w-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-100"
-            >
-              Continue
-            </Button>
+            <div className="pt-4 flex gap-2">
+              <Button
+                onClick={onClose}
+                className="w-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-100"
+              >
+                Close
+              </Button>
+              <Button asChild className="w-full">
+                <Link href={urlScanner} target="_blank" rel="noopener noreferrer">
+                  View Transaction
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
