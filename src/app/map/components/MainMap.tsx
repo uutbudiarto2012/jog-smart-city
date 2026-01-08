@@ -15,6 +15,7 @@ import { ShoppingCart } from "lucide-react";
 
 import CheckoutModal from "./CheckoutModal";
 import SuccessModal from "./SuccessModal";
+import { useLandBlock } from "@/modules/land-block/useLandBlock";
 
 const FullMap = dynamic(() => import("./FullMap"), {
   ssr: false,
@@ -29,6 +30,8 @@ const OWNED_TERRITORIES_KEY = "map_owned_territories";
 const AVAILABLE_TERRITORIES_KEY = "map_available_territories";
 
 export default function MainMap() {
+  const { sellMultiple, buyMultiple } = useLandBlock()
+  const [urlScanner, setUrlScanner] = useState('')
   const { address } = useAccount();
   // const router = useRouter();
 
@@ -138,8 +141,14 @@ export default function MainMap() {
         description: `Purchased on ${new Date().toLocaleDateString()}`,
         coordinates: cart.map((item) => ({ ...item, status: "OWNED" })),
       };
+      const ids = newPurchase.coordinates.map(i => Number(i.id)) 
+      const resultSC = await buyMultiple(ids)
+      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`)
       setOwnedTerritories((prev) => [...prev, newPurchase]);
     } else if (mode === "SELL") {
+      const ids = cart.map(i => Number(i.id)) 
+      const resultSC = await sellMultiple(ids)
+      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`)
       // 1. Remove sold items from ownedTerritories
       setOwnedTerritories((prev) => {
         return (
@@ -309,9 +318,11 @@ export default function MainMap() {
 
         <SuccessModal
           isOpen={isSuccessOpen}
+          // isOpen={true}
           onClose={() => setIsSuccessOpen(false)}
           count={successCount}
           mode={mode}
+          urlScanner={urlScanner}
         />
       </div>
     </section>

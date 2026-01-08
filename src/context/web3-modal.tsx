@@ -1,12 +1,11 @@
 "use client";
 
-import { createAppKit } from "@reown/appkit/react";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { mainnet, arbitrum, base, polygon } from "@reown/appkit/networks";
+import { bsc, bscTestnet } from "@reown/appkit/networks";
+import { createAppKit } from "@reown/appkit/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { WagmiProvider, type Config } from "wagmi";
-import React, { type ReactNode } from "react";
-import { cookieStorage, createStorage } from "wagmi";
+import { type ReactNode } from "react";
+import { cookieStorage, createStorage, WagmiProvider, type Config } from "wagmi";
 
 // 0. Setup QueryClient
 const queryClient = new QueryClient();
@@ -26,7 +25,8 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const networks = [mainnet, base, polygon, arbitrum];
+// mainnet, base, polygon, arbitrum,
+const networks = [bsc,bscTestnet];
 
 const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
