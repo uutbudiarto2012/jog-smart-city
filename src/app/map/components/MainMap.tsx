@@ -30,8 +30,8 @@ const OWNED_TERRITORIES_KEY = "map_owned_territories";
 const AVAILABLE_TERRITORIES_KEY = "map_available_territories";
 
 export default function MainMap() {
-  const { sellMultiple, buyMultiple } = useLandBlock()
-  const [urlScanner, setUrlScanner] = useState('')
+  const { sellMultiple, buyMultiple } = useLandBlock();
+  const [urlScanner, setUrlScanner] = useState("");
   const { address } = useAccount();
   // const router = useRouter();
 
@@ -55,7 +55,7 @@ export default function MainMap() {
       } catch (e) {
         console.error(
           "Failed to parse owned territories from local storage",
-          e
+          e,
         );
       }
     }
@@ -66,7 +66,7 @@ export default function MainMap() {
       } catch (e) {
         console.error(
           "Failed to parse available territories from local storage",
-          e
+          e,
         );
       }
     }
@@ -78,7 +78,7 @@ export default function MainMap() {
     if (isLoaded) {
       localStorage.setItem(
         OWNED_TERRITORIES_KEY,
-        JSON.stringify(ownedTerritories)
+        JSON.stringify(ownedTerritories),
       );
     }
   }, [ownedTerritories, isLoaded]);
@@ -87,7 +87,7 @@ export default function MainMap() {
     if (isLoaded) {
       localStorage.setItem(
         AVAILABLE_TERRITORIES_KEY,
-        JSON.stringify(availableTerritories)
+        JSON.stringify(availableTerritories),
       );
     }
   }, [availableTerritories, isLoaded]);
@@ -141,14 +141,14 @@ export default function MainMap() {
         description: `Purchased on ${new Date().toLocaleDateString()}`,
         coordinates: cart.map((item) => ({ ...item, status: "OWNED" })),
       };
-      const ids = newPurchase.coordinates.map(i => Number(i.id)) 
-      const resultSC = await buyMultiple(ids)
-      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`)
+      const ids = newPurchase.coordinates.map((i) => Number(i.id));
+      const resultSC = await buyMultiple(ids);
+      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`);
       setOwnedTerritories((prev) => [...prev, newPurchase]);
     } else if (mode === "SELL") {
-      const ids = cart.map(i => Number(i.id)) 
-      const resultSC = await sellMultiple(ids)
-      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`)
+      const ids = cart.map((i) => Number(i.id));
+      const resultSC = await sellMultiple(ids);
+      setUrlScanner(`https://testnet.bscscan.com/tx/${resultSC}`);
       // 1. Remove sold items from ownedTerritories
       setOwnedTerritories((prev) => {
         return (
@@ -157,7 +157,7 @@ export default function MainMap() {
               ...group,
               // Filter out items that are in the cart (sold)
               coordinates: group.coordinates.filter(
-                (t) => !cart.some((c) => c.id === t.id)
+                (t) => !cart.some((c) => c.id === t.id),
               ),
             }))
             // Remove groups that became empty
@@ -172,7 +172,7 @@ export default function MainMap() {
             return { ...t, status: "LISTED" };
           }
           return t;
-        })
+        }),
       );
     }
 
@@ -214,7 +214,7 @@ export default function MainMap() {
           className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
             mode === "BUY"
               ? "bg-emerald-500 text-white shadow-lg"
-              : "text-zinc-300 hover:text-white hover:bg-white/5"
+              : "text-black hover:text-black hover:bg-white/5"
           }`}
         >
           Buy Land
@@ -224,7 +224,7 @@ export default function MainMap() {
           className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
             mode === "SELL"
               ? "bg-indigo-500 text-white shadow-lg"
-              : "text-zinc-300 hover:text-white hover:bg-white/5"
+              : "text-black hover:text-black hover:bg-white/5"
           }`}
         >
           Sell Land
@@ -255,7 +255,7 @@ export default function MainMap() {
           mode={mode}
           onMultiSelect={(items) => {
             const newItems = items.filter(
-              (item) => !cart.some((c) => c.id === item.id)
+              (item) => !cart.some((c) => c.id === item.id),
             );
             if (newItems.length > 0) {
               setCart((prev) => [...prev, ...newItems]);

@@ -97,7 +97,7 @@ function BoxSelection({
           // Filter for owned by this user
           candidates = userTerritories
             .filter(
-              (ut) => ut.address === userAddress || ut.owner === userAddress
+              (ut) => ut.address === userAddress || ut.owner === userAddress,
             ) // Check robust match
             .flatMap((ut) => ut.coordinates);
         }
@@ -202,9 +202,12 @@ export default function FullMap({
       >
         <TileLayer
           key={resolvedTheme}
-          className={resolvedTheme === "dark" ? "google-map-dark" : ""}
-          attribution="&copy; Google Maps"
-          url="http://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          attribution="&copy; Esri &mdash; Esri, DeLorme, NAVTEQ"
+          url={
+            resolvedTheme === "dark"
+              ? "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+              : "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+          }
         />
         <ZoomControl position="bottomleft" />
         <Pane name="territory-images" style={{ zIndex: 500 }} />
@@ -315,8 +318,8 @@ export default function FullMap({
                     fillOpacity: hasImage
                       ? 0
                       : isSelected || isInCart
-                      ? 0.8
-                      : 0.6,
+                        ? 0.8
+                        : 0.6,
                     weight: isSelected ? 3 : 1,
                     lineJoin: "round",
                   }}
